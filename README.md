@@ -9,9 +9,11 @@
 * **The "Claims Adjuster" (Admin):** Needs to verify the physical presence of 5,000 concurrent users. They use SignalArmor’s **Risk Dashboard** to flag users whose GPS coordinates do not match their hardware "Timing Advance" (distance from cell tower).
 
 ### Workflow:
+![SignalArmor_workflow](images\SignalArmor_workflow.png)
 1.  **Passive Harvest:** App captures GPS, Cell ID, Neighboring Cells, and RTT (Round Trip Time).
 2.  **The Handshake:** Data is sent to the **SignalArmor Engine**.
 3.  **Cross-Verification:** The engine compares the GPS "claimed" location against the physical "broadcast sector" of the connected cell tower.
+![Cell_tower_triangulation](images\Cell_tower_triangulation.jpeg)
 4.  **Risk Scoring:** A $P_{fraud}$ (Probability of Fraud) score is generated based on signal divergence.
 
 ---
